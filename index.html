@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Vividportraits: Face Parsing Guided Portrait Animation">
+  <meta name="description" content="Vividportraits: Face Parsing Guided Portrait Animation">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vividportraits: Face Parsing Guided Portrait Animation</title>
@@ -22,15 +22,13 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
@@ -40,93 +38,179 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
+
 <body>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Vividportraits: Face Parsing Guided Portrait Animation</h1>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Vividportraits: Face Parsing Guided Portrait Animation</h1>
+            <div class="column has-text-centered">
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/teaser.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Portrait animation aims to transfer the facial expressions and movements of a target character onto a
+              reference character. This task has two primary requirements: accurately transferring motion and
+              expressions while fully preserving the reference portrait's identity features. We introduce
+              Vividportraits, a diffusion-based model designed to effectively meet these requirements. In contrast to
+              existing methods that rely on sparse representations such as facial landmarks, our approach leverages
+              facial parsing maps for motion guidance, enabling a more precise conveyance of subtle expressions. A
+              random scaling technique is applied during training to prevent the model from internalizing
+              identity-specific features from the driving images. Additionally, we conduct foreground-background
+              segmentation on the reference portrait to reduce data redundancy. The long-video generation process is
+              refined to enhance consistency across extended sequences. Our model, exclusively trained on public
+              datasets, demonstrates superior performance relative to current state-of-the-art methods, with a
+              significant improvement of 8% in expression metric.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
 
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-          Portrait animation aims to transfer the facial expressions and movements of a target character onto a reference character. This task has two primary requirements: accurately transferring motion and expressions while fully preserving the reference portrait's identity features. We introduce Vividportraits, a diffusion-based model designed to effectively meet these requirements. In contrast to existing methods that rely on sparse representations such as facial landmarks, our approach leverages facial parsing maps for motion guidance, enabling a more precise conveyance of subtle expressions. A random scaling technique is applied during training to prevent the model from internalizing identity-specific features from the driving images. Additionally, we conduct foreground-background segmentation on the reference portrait to reduce data redundancy. The long-video generation process is refined to enhance consistency across extended sequences. Our model, exclusively trained on public datasets, demonstrates superior performance relative to current state-of-the-art methods, with a significant improvement of 8% in expression metric.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-  </div>
-</section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h3>Single Portrait + Multiple Motions</h3>
-      <div id="results-carousel" class="carousel results-carousel">
-
-        <div class="hero-body">
-          <video id="teaser" autoplay muted loop playsinline height="100%">
-            <source src="./static/videos/teaser.mp4" type="video/mp4">
-          </video>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<footer class="footer">
-  <div class="container">
     <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
+      <!-- Animation. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <!-- Re-rendering. -->
+          <hr width="100%" size="5">
+          <div class="content has-text-centered">
+            <h3 class="title is-4">Single Portrait + Multiple Motions</h3>
+            <div class="content has-text-justified">
+            </div>
+            <div class="container is-clipped">
+              <div class="column is-full-width">
+                <div id="slider">
+
+                  <div class="card">
+                    <div class="card-image">
+                      <video id='replay-video' autoplay controls muted loop playsinline width='100%'>
+                        <source src='./static/videos/same_id/id2.mp4' type='video/mp4'>
+                      </video>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-image">
+                      <video id='replay-video1' autoplay controls muted loop playsinline width='100%'>
+                        <source src='./static/videos/same_id/id11.mp4' type='video/mp4'>
+                      </video>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-image">
+                      <video id='replay-video1' autoplay controls muted loop playsinline width='100%'>
+                        <source src='./static/videos/same_id/id13.mp4' type='video/mp4'>
+                      </video>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-image">
+                      <video id='replay-video1' autoplay controls muted loop playsinline width='100%'>
+                        <source src='./static/videos/same_id/id18.mp4' type='video/mp4'>
+                      </video>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-image">
+                      <video id='replay-video1' autoplay controls muted loop playsinline width='100%'>
+                        <source src='./static/videos/same_id/id29.mp4' type='video/mp4'>
+                      </video>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-image">
+                      <video id='replay-video1' autoplay controls muted loop playsinline width='100%'>
+                        <source src='./static/videos/same_id/id30.mp4' type='video/mp4'>
+                      </video>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-image">
+                      <video id='replay-video1' autoplay controls muted loop playsinline width='100%'>
+                        <source src='./static/videos/same_id/id32.mp4' type='video/mp4'>
+                      </video>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            <!--/ Re-rendering. -->
+
+
+
+            <!--/ Animation. -->
+
+          </div>
+        </div>
+</section>
+
+
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                code</a> of this website,
+              we just ask that you link back to this page in the footer.
+              Please remember to remove the analytics code included in the header of the website which
+              you do not want on your website.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
+
 </html>
